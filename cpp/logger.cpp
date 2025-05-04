@@ -9,15 +9,17 @@ Logger &Logger::instance() {
 
 void Logger::set_sink(SinkType type) {
   switch (type) {
-  case SinkType::NONE:
-  case SinkType::CONSOLE:
-    m_sink = std::make_unique<ConsoleSink>();
-    break;
   case SinkType::FILE:
     m_sink = std::make_unique<FileSink>();
     break;
+  case SinkType::NONE:
+    break;
+  case SinkType::CONSOLE:
+    m_sink = std::make_unique<ConsoleSink>();
+    break;
+
   default:
-    m_sink = std::make_unique<NullSink>();
+    m_sink = std::make_unique<ConsoleSink>();
     break;
   }
 }
