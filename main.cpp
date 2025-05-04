@@ -2,16 +2,7 @@
 // HW-04. Імплементація логера на патернах проектування
 //-----------------------------------------------
 
-#include <algorithm>
-#include <filesystem>
-#include <iostream>
-#include <string>
-
-#include "./hpp/logger.hpp"
-
-using string = std::string;
-
-int makeLogging(int argc, char **argv);
+#include "main.hpp"
 
 int main(int argc, char **argv) {
   makeLogging(argc, argv);
